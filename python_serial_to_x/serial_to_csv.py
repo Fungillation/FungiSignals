@@ -15,6 +15,7 @@ Requirements:
 """
 
 import sys
+import os
 import serial
 import csv
 import time
@@ -113,6 +114,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     duration = int(sys.argv[1])
+    os.makedirs(dir, exist_ok = True)
 
     # Read serial data
     data_direct, averaged_values, start_time, end_time = read_serial_data(duration)
