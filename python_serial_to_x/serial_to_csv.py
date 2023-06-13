@@ -30,14 +30,14 @@ average_samples = 60
 
 # Output files
 dir = "data/"
-csv_average_file = 'data_average.csv'
-csv_direct_file = 'data_direct.csv'
-plot_average_file = 'plot_average.png'
-plot_direct_file = 'plot_direct.png'
+csv_average_file = 'data_average'
+csv_direct_file = 'data_direct'
+plot_average_file = 'plot_average'
+plot_direct_file = 'plot_direct'
 
 # Function to save data to CSV file
 def save_data_to_csv(data,dir, filename, start_time, end_time):
-    filename = f'{dir}{filename}_{start_time}_{end_time}!'
+    filename = f'{dir}{filename}_{start_time}_{end_time}.csv'
     with open(filename, 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(['Index', 'Value'])
@@ -97,7 +97,7 @@ def plot_data(data_direct,dir, averaged_values, start_time, end_time):
     plt.ylabel('Average Value')
 
     plt.tight_layout()
-    plt.savefig(fname=f'{dir}plot_{start_time}_{end_time}')
+    plt.savefig(fname=f'{dir}plot_{start_time}_{end_time}.png')
     plt.show()
 
 # Format time as string
