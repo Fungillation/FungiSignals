@@ -22,7 +22,8 @@ import time
 import matplotlib.pyplot as plt
 
 # Arduino Serial Port Configuration
-port = '/dev/cu.usbmodem14301'  # Replace with your Arduino's serial port
+port = '/dev/cu.usbmodem14301'  # Replace with your Arduino's serial port Raspberry: '/dev/ttyACM0'
+## port = '/dev/ttyACM0'  # Replace with your Arduino's serial port Raspberry: '/dev/ttyACM0'
 baud_rate = 9600
 
 # Number of samples for averaging
