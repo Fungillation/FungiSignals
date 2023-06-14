@@ -22,8 +22,8 @@ import time
 import matplotlib.pyplot as plt
 
 # Arduino Serial Port Configuration
-port = '/dev/cu.usbmodem14301'  # Replace with your Arduino's serial port Raspberry: '/dev/ttyACM0'
-## port = '/dev/ttyACM0'  # Replace with your Arduino's serial port Raspberry: '/dev/ttyACM0'
+##port = '/dev/cu.usbmodem14301'  # Replace with your Arduino's serial port Raspberry: '/dev/ttyACM0'
+port = '/dev/ttyACM0'  # Replace with your Arduino's serial port Raspberry: '/dev/ttyACM0'
 baud_rate = 9600
 
 # Number of samples for averaging
@@ -54,13 +54,26 @@ def read_serial_data(duration):
     
     start_time = time.time()
     end_time = start_time + duration
+    
+    #default value
+    last_value = 0
 
     while time.time() < end_time:
         # Read a line from serial port
         line = arduino.readline().decode().strip()
-
+        print(line)
+        try:
+            # Read a line from serial port
+            line = arduino.readline().decode()
+            line = line.strip()
+        except:
+            line = last_value
         # Convert line to float (assuming the output is numeric)
-        value = float(line)
+        try:
+            value = float(line)
+            last_value = value
+        except:
+            value = last_value
 
         # Append direct value to data list
         data_direct.append(value)
