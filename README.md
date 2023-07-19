@@ -14,3 +14,6 @@ this diretory contains different arduino sketches connecting different sensors a
 
 this directory contains multiple max msp patches that were used for the prototyping of fungillation
 
+## Final_installation
+
+this directory contains the arduino sketch and pure data patch for the final installation
