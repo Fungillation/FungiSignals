@@ -50,10 +50,8 @@ void setup() {
 void loop() {
 
 
-
-  
   if((digitalRead(11) == 1)||(digitalRead(12) == 1)){
-    Serial.println('!');
+    Serial.println('0');
   }
   else{
     // send the value of analog input 0:
