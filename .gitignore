@@ -1,4 +1,6 @@
 *.DS_Store
-data/
-data_multisensor/
 Recordings/
+max_patches/data/converted data
+data/
+python_serial_to_x/data/
+python_serial_to_x/data_multisensor/
